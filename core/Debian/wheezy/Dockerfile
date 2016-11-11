@@ -3,6 +3,8 @@ MAINTAINER Christopher Davenport
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+       apt-utils \
+    && apt-get install -y --no-install-recommends \
        sudo \
        build-essential \
        libffi-dev \
@@ -15,6 +17,10 @@ RUN apt-get update \
     && apt-get clean \
     && /usr/bin/pip install --upgrade pip \
     && /usr/local/bin/pip install \
+        urllib3 \
+        pyopenssl \
+        ndg-httpsclient \
+        pyasn1 \
         ansible \
         cryptography \
     && mkdir -p /etc/ansible \
