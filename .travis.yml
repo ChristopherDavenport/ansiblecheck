@@ -76,6 +76,10 @@ env:
     distribution_version: "6.6"
     init: /sbin/init
     run_opts: ""
+  - distribution: Amazon
+    distribution_version: "2016.09"
+    init: /sbin/init
+    run_opts: ""
 
 script:
   - docker build -t ansiblecheck/ansiblecheck:"${distribution,,}"-"${distribution_version}" core/"${distribution}"/"${distribution_version}"
